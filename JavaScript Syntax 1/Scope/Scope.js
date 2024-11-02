@@ -13,3 +13,6 @@ Global namespace is the space in our code that contains globally scoped informat
 Scope pollution is when too many variables exist in a namespace or variable names are reused.
 
 */
+
+
+//
