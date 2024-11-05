@@ -26,6 +26,7 @@ let raceNumber = Math.floor(Math.random() * 1000);
 
 const earlyRegistration = false
 runnerAge = 18
+//
 
 
 if (runnerAge >= 18 && earlyRegistration) {
