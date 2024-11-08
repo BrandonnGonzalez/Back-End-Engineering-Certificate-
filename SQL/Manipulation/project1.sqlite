@@ -1,2 +1,31 @@
 -- In this project I am creating a table of all of my friends where I am able to add and delete date from it.
 -- It is a general and simple project, just to touch up on my SQL skills.
+
+
+-- step 1: create the table
+CREATE TABLE friends (id INTEGER, name TEXT, birthday DATE); 
+
+-- step 2: add a friend into table
+ INSERT INTO friends(id, name, birthday) VALUES (1, 'Ororo Munroe', '1940-05-30');
+
+-- step 4: Adding two more friends
+INSERT INTO friends(id, name, birthday) VALUES (2, 'Paola Mendizabal', '2003-09-05');
+
+INSERT INTO friends (id, name, birthday) VALUES(3, 'Zachary Gonzalez', '2002-01-05');
+
+
+-- step 5: Replace 'Ororo' first name to 'Storm'
+UPDATE friends SET name = 'Storm' WHERE id = 1;
+
+-- step 6: Adding a new column
+ALTER TABLE friends ADD COLUMN email TEXT;
+-- step 7: Update Storm's email
+UPDATE friends SET email = 'storm@codecademy.com' WHERE id = 1;
+
+-- step 8: Remove storm from friends 
+DELETE FROM friends WHERE id = 1;
+
+-- At the end, the table will result in only two friends, including their id(INTEGER), name(TEXT), birthday(DATE), and their email(TEXT, which will be set to null by default).
+
+
+ SELECT * FROM friends;
