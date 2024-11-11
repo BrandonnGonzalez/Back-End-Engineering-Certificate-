@@ -1,6 +1,6 @@
 -- In this project I am creating a table of all of my friends where I am able to add and delete date from it.
 -- It is a general and simple project, just to touch up on my SQL skills.
-
+--
 
 -- step 1: create the table
 CREATE TABLE friends (id INTEGER, name TEXT, birthday DATE); 
