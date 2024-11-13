@@ -4,38 +4,71 @@
 
 
 
--- Step 2: Calculates the total number of companies in the table
+-- Step 1: There are 10 columns
+SELECT *
+FROM startups;
+
+
+-- Step 2: Calculate the total number of companies in the table
 SELECT COUNT(*) FROM startups;
 
--- Step 3: Calculates the total value of all companies in the table
+-- Step 3: Calculate the total values of all the companies in table
 SELECT SUM(valuation) FROM startups;
+-- total values of all companies = 974455790000
 
--- Step 4 and 5: Maximum amount of money raised by a startup, then return the max amount of money raised during 'Seed' stage.
-SELECT MAX(raised) FROM startups WHERE stage = 'Seed';
+-- Step 4 & 5: Calculates highest amount raised by startup
+SELECT MAX(raised) FROM startups 
+WHERE stage = 'Seed';
+-- highest amount raised = 11500000000
+-- highest amount raised with condition = 1800000
 
--- Step 6: What year was the oldest company on the list founded?
+-- Step 6: What yearw as the oldest company founded?
 SELECT MIN(founded) FROM startups;
+-- returns 1994
 
--- Step 7: Returns the average valuation
+-- Step 7: Return the average valuation
 SELECT AVG(valuation) FROM startups;
+-- AVG(valuation) == 15974685081.9672
 
--- Step 8: Returns the average valuation from each category
-SELECT category, AVG(valuation) 
-FROM startups 
+-- Step 8: Return avg valuation in each category
+SELECT category, AVG(valuation) FROM startups GROUP BY category;
+
+-- Step 9: Return avg(valuation) in each category, while rounding the avg to two decimal places.
+SELECT category, ROUND(AVG(valuation), 2) FROM startups GROUP BY category;
+
+-- Step 10: Return AVG(valuation) in each category, rounding the AVG to two decimal places, ordering the list from highest averages to lowest.
+SELECT category, ROUND(AVG(valuation), 2) 
+FROM startups
+GROUP BY 1 -- groups by category
+ORDER BY 2 DESC; -- orders by ROUND(AVG(valuation), 2)
+
+
+-- Step 11: Returns the name of each category with the total number of companies that belong to it
+SELECT category, COUNT(*) FROM startups
 GROUP BY category;
 
--- Step 9, 10: Returns the average valuation in each category. Then rounds the averages of each cateogry to two decimal places, and orders the list from highest averages to lowest.
-SELECT category, ROUND(AVG(valuation), 2)
-FROM startups
+-- Step 12: Filters the result to only include categories that have more than three companies in them.
+SELECT category FROM startups
+GROUP BY category
+HAVING COUNT(*) > 3;
+-- The most competitive markets are: Education, Mobile, Social.
+
+-- Step 13: Average size of a startup in each location
+SELECT location, AVG(employees) FROM startups
+GROUP BY location;
+
+
+-- Step 14: Average size of a startup in each location, with average sizes above 500
+SELECT location, AVG(employees) FROM startups
 GROUP BY 1
-ORDER BY 2 DESC;
+HAVING AVG(employees) > 500;
+-- returns: Brooklyn - 502.666
+-- New York: 702.75
+-- San Fran: 1920.4
+-- Silicon valley: 1804.6
 
 
--- Step 11 and 12: returns the name of each category with the total number of companies that belong to it. Then filters the result to only include categories that have more than three companies in them, which resukts to 3 companies.
-SELECT category, COUNT(*) FROM startups GROUP BY category HAVING COUNT(*) > 3;
 
--- Step 13: Calculates the average size of a startup in each location
-SELECT location, AVG(employees) FROM startups GROUP BY location HAVING AVG(employees) > 500;
 
 
 
