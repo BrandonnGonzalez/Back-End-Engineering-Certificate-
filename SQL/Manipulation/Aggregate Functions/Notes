@@ -1,3 +1,5 @@
+Aggregate functions combine multiple rows together to form a single value of more meaningful information.
+
 COUNT() : count the number of rows
 
 SUM() : the sum of the values in a column
@@ -9,8 +11,10 @@ AVG()
 
 ROUND() : round the values in the column
 
-Aggregate functions combine multiple rows together to form a single value of more meaningful information.
 
 GROUP BY  is a clause used with aggregate functions to combine data from one or more columns.
 
 HAVING limit the results of a query based on an aggregate property.
+
+
+WHERE filters rows, while HAVING filters groups
