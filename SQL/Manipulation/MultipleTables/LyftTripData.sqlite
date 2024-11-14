@@ -1,1 +1,65 @@
+/*
+Practicing what I have learned about joining with multiple rables, by combining rows and more from different tables.
+I am in the scenario of being a Data Analyst at Lyft (a ride sharing platform), and was assigned the project of organizing data given the three tables:
 
+trips: trips information
+riders: user data
+cars: autonomous cars
+*/
+
+
+-- step 1: Examining the three tables given
+--SELECT * FROM trips;
+
+--SELECT * FROM riders;
+
+--SELECT * FROM cars;
+
+-- step 2: What are the primary keys?
+-- Trips primary key: id
+-- riders primary key: id
+-- cars primary key: id
+
+
+-- step 3: cross join between riders and cars table
+--SELECT * FROM riders CROSS JOIN cars;
+
+
+-- step 4: Creating a trip log with the trips and users
+SELECT *
+FROM trips
+LEFT JOIN riders 
+  ON trips.rider_id = riders.id;
+
+-- step 5: finds the coulumns to join on and combine the trips and cars table using an INNER JOIN
+SELECT * FROM trips JOIN cars ON trips.car_id = cars.id;
+
+-- step 6: stacks the riders table on top of the new riders2
+SELECT * 
+FROM riders
+UNION
+SELECT * 
+FROM riders2;
+
+-- step 7: Average cost of a trip
+SELECT ROUND(AVG(cost), 2)
+FROM trips;
+
+-- step 8: Finds all the riders who have used Lyft less than 500 times
+SELECT *
+FROM riders
+WHERE total_trips < 500
+UNION
+SELECT *
+FROM riders2
+WHERE total_trips < 500;
+
+
+-- step 9: Calculates all of the cars that are active
+SELECT COUNT(*) FROM cars WHERE status = 'active';
+
+
+-- step 10: Finds the two cars with the highest amount of trips_completed.
+SELECT * FROM cars 
+ORDER BY trips_completed DESC 
+LIMIT 2;
