@@ -1,0 +1,94 @@
+/*
+Hacker News is a popular website run by Y Combinator. It’s widely known by people in the tech industry as a community site for sharing news, showing off projects, asking questions, among other things.
+
+In this project, you will be working with a table named hacker_news that contains stories from Hacker News since its launch in 2007. It has the following columns:
+
+title: the title of the story
+user: the user who submitted the story
+score: the score of the story
+timestamp: the time of the story
+url: the link of the story
+This data was kindly made publicly available under the MIT license.
+*/
+
+
+ -- step 1: Finding the most popular Hacker News stories
+ SELECT title, score
+FROM hacker_news
+ORDER BY score DESC
+LIMIT 5;
+
+-- step 2: Find the  total score of all the stories.
+SELECT SUM(score) FROM hacker_news;
+
+-- step 3:  Finds the individual users who have gotten combined scores of more than 200, and their combined scores summed up.
+SELECT user, SUM(score) 
+FROM hacker_news 
+GROUP BY user
+HAVING SUM(score) > 200
+ORDER BY 2 DESC;
+
+
+-- Step 4: Add the top user's scores together and divide it by the total sum:
+
+SELECT (517 + 309 + 304 + 282) / 6366.0;
+-- The 4 users have a combined total of 22% in scores.
+
+-- Step 5: How many times has each offending user posted this link?
+SELECT user,
+   COUNT(*)
+FROM hacker_news
+WHERE url LIKE '%watch?v=dQw4w9WgXcQ%'
+GROUP BY user
+ORDER BY COUNT(*) DESC;
+
+-- Step 6 and 7: 
+-- Which sites feed Hacker News?
+
+SELECT CASE
+   WHEN url LIKE '%github.com%' THEN 'GitHub'
+   WHEN url LIKE '%medium.com%' THEN 'Medium'
+   WHEN url LIKE '%nytimes.com%' THEN 'New York Times'
+   ELSE 'Other'
+  END AS 'Source',
+  COUNT(*)
+FROM hacker_news
+GROUP BY 1;
+
+
+-- Step 8: Shows the top 10 most recent timestamps from posts
+SELECT timestamp
+FROM hacker_news
+LIMIT 10;
+
+
+-- Step 9: Using strftime() function to return formatted dates
+SELECT timestamp,
+   strftime('%H', timestamp) -- %H Returns the hour of the column
+FROM hacker_news
+GROUP BY 1
+LIMIT 20;
+
+-- Step 10: Returns the three columns: The hours of the timestamp, the average score for each hour, and the count of stories for each hour.
+-- What's the best time to post a story?
+-- AND 
+-- Step 11: Rounds the average scores, renames the columns to make it more readable using AS, and adds a WHERE clause to filter out the NULL values in the timestamp.
+
+SELECT strftime('%H', timestamp) AS 'Hour', 
+   ROUND(AVG(score), 1) AS 'Average Score', 
+   COUNT(*) AS 'Number of Stories'
+FROM hacker_news
+WHERE timestamp IS NOT NULL
+GROUP BY 1
+ORDER BY 2 DESC;
+
+
+
+
+
+
+
+
+
+
+
