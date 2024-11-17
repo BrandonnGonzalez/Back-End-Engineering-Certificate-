@@ -1,4 +1,4 @@
-CROSS JOIN: 
+CROSS JOIN: :
 ** The JOIN clause allows for the return of results from more than one table by joining them together with other results based on common column values specified using an ON clause.**
 
 So far, we’ve focused on matching rows that have some information in common.
