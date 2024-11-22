@@ -1,5 +1,5 @@
 /*
-
+NOTES: 
 
 .forEach()
  is used to execute the same code on every element in an array but does not change the array and returns undefined.
