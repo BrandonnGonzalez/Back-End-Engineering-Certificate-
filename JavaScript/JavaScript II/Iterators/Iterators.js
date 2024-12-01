@@ -17,5 +17,5 @@ NOTES:
 iterates through an array and takes the values of the elements and returns a single value.
 All iterator methods take a callback function, which can be a pre-defined function, a function expression, or an arrow function.
 
-/
+*There are plenty of more iterator methods but here are some very useful ones*
 */
