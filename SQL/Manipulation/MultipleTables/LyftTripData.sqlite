@@ -2,9 +2,9 @@
 Practicing what I have learned about joining with multiple rables, by combining rows and more from different tables.
 I am in the scenario of being a Data Analyst at Lyft (a ride sharing platform), and was assigned the project of organizing data given the three tables:
 
-trips: trips information
-riders: user data
-cars: autonomous cars
+- trips: trips information
+- riders: user data
+- cars: autonomous cars
 */
 
 
