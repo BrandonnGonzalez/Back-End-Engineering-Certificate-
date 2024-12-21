@@ -6,6 +6,8 @@ However, P. aequor cannot survive above sea level and locating P. aequor in the 
 
 */
 
+//
+
 // Returns a random DNA base
 const returnRandBase = () => {
   const dnaBases = ['A', 'T', 'C', 'G']
