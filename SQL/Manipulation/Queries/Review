@@ -1,6 +1,6 @@
 SELECT is the clause we use every time we want to query information from a database.
 
-AS renames a column or table.
+AS renames a column or table..
 
 DISTINCT return unique values.
 
