@@ -15,3 +15,5 @@ You can create, append, and remove elements by using the .createElement(),.appen
 The .onclick property can add interactivity to a DOM element based on a click event.
 
 The .children property returns a list of an element’s children and the .parentNode property returns the element’s closest connected node in the direction towards the root.
+
+- 
