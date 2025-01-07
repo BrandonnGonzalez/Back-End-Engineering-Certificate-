@@ -63,8 +63,40 @@ itemFive.addEventListener('mousedown', showItem);
 
 KEYBOARD EVENTS
 
+Other popular types of events are keyboard events! keyboard events are triggered by user interaction with keyboard keys in the browser.
+
+The keydown event is fired while a user presses a key down.
+
+The keyup event is fired while a user releases a key.Key
+
+The keypress event is fired when a user presses a key down and releases it. This is different from using keydown and keyup events together, because those are two complete events and keypress is one complete event.
+
+Keyboard events have unique properties assigned to their event objects like the .key property that stores the values of the key pressed by the user. You can program the event handler function to react to a specific key, or react to any interaction with the keyboard.
+
 
 /*
+let ball = document.getElementById('float-circle');
+
+// Write your code below
+
+// step 1: creating a function called up() that will raise the .bottom position of the ball to '250px'
+function up() {
+  ball.style.bottom = '250px';
+}
+
+// step 2: function called down() that will lower the .bottom position of the ball to '50px'
+function down() {
+ball.style.bottom = '50px';
+}
+
+// step 3: event handler property that runs the up() function when a keydown event fires on the document object, OR anywhere on the DOM, as the event target.
+
+document.addEventListener('keydown', up);
+
+// step 4: Same function as step 3 but will then make the ball come down from being in the air, instead of just floating infinitely.
+
+document.addEventListener('keyup', down);
+
 
 
 */
