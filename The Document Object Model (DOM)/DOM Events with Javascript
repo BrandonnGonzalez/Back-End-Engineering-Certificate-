@@ -1,5 +1,60 @@
+MOUSE EVENTS
+
+When you use a mouse device on a website, mouse events fire. You’ve seen the click and wheel events, but, there are even more mouse events to explore!
+
+The mousedown event is fired when the user presses a mouse button down. This is different from a click event because mousedown doesn’t need the mouse button to be released to fire.
+
+The mouseup event is fired when the user releases the mouse button. This is different from the click and mousedown events because mouseup doesn’t depend on the mouse button being pressed down to fire.
+
+The mouseover event is fired when the mouse enters the content of an element.
+
+The mouseout event is fired when the mouse leaves an element.
+
+
 /*
 
+// These variables store the boxes on the side
+let itemOne = document.getElementById('list-item-one');
+let itemTwo = document.getElementById('list-item-two');
+let itemThree = document.getElementById('list-item-three');
+let itemFour = document.getElementById('list-item-four');
+let itemFive = document.getElementById('list-item-five');
+let resetButton = document.getElementById('reset-button');
+
+// This function programs the "Reset" button to return the boxes to their default styles
+let reset = function() {
+  itemOne.style.width = ''
+  itemTwo.style.backgroundColor = ''
+  itemThree.innerHTML = 'The mouse must leave the box to change the text'
+  itemFive.style.display = "none"
+};
+resetButton.onclick = reset;
+
+// Write your code here
+function increaseWidth(){
+  itemOne.style.width = '500px';
+}
+
+itemOne.addEventListener('mouseover', increaseWidth);
+
+function changeBackground(){
+  itemTwo.style.backgroundColor = 'green';
+}
+
+itemTwo.addEventListener('mouseup', changeBackground);
+
+// step 5
+function changeText() {
+  itemThree.innerHTML = 'The mouse has left the element';
+}
+
+itemThree.addEventListener('mousepuit', changeText);
+
+function showItem() {
+  itemFive.style.display = 'block';
+
+}
+itemFive.addEventListener('mousedown', showItem);
 
 
 */
