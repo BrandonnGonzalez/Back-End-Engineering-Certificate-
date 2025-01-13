@@ -1,0 +1,72 @@
+
+.forEach() is used to execute the same code on every element in an array but does not change the array and returns undefined.
+
+.map() executes the same code on every element in an array and returns a new array with the updated elements.
+
+.filter() checks every element in an array to see if it meets certain criteria and returns a new array with the elements that return truthy for the criteria.
+
+.findIndex()  returns the index of the first element of an array that satisfies a condition in the callback function. It returns -1 if none of the elements in the array satisfies the condition
+.reduce() iterates through an array and takes the values of the elements and returns a single value.
+All iterator methods take a callback function, which can be a pre-defined function, a function expression, or an arrow function.
+
+
+
+
+  // 1. Define a callback function before you use it in an iterator.
+
+function isEven(num) {
+  return num % 2 === 0;
+}
+
+// Use it in an iterator
+const numbers = [1, 2, 3, 4, 5, 6];
+const evenNumbers = numbers.filter(isEven);
+
+console.log(evenNumbers); // Output: [2, 4, 6]
+
+
+// 2. Chain two iteration methods on the same array
+const numbers = [1, 2, 3, 4, 5, 6];
+
+// Filter for even numbers and then map to their squares
+const evenSquares = numbers
+  .filter(num => num % 2 === 0)  // Filter for even numbers
+  .map(num => num ** 2);         // Square the even numbers
+
+console.log(evenSquares); // Output: [4, 16, 36]
+
+
+// 3. Use the optional arguments in an iterator to include the index or the entire array 
+const fruits = ['apple', 'banana', 'cherry'];
+
+fruits.forEach((fruit, index, array) => {
+  console.log(`Index: ${index}, Fruit: ${fruit}, Entire array: [${array.join(', ')}]`);
+});
+
+// Output:
+// Index: 0, Fruit: apple, Entire array: [apple, banana, cherry]
+// Index: 1, Fruit: banana, Entire array: [apple, banana, cherry]
+// Index: 2, Fruit: cherry, Entire array: [apple, banana, cherry]
+
+
+// 4. Use .reduce() to take a multi-layered array and return a single layer array from scratch.
+const multiLayeredArray = [[1, 2], [3, 4], [5, [6, 7]]];
+
+// Flatten the array
+const flattenedArray = multiLayeredArray.reduce((acc, curr) => {
+  // Use Array.isArray to handle nested arrays
+  return acc.concat(Array.isArray(curr) ? curr.flat(Infinity) : curr);
+}, []);
+
+/*
+
+acc: The accumulator — this is the array we are building up as we iterate.
+curr: The current element being processed from the original array.
+Array.isArray(curr): A check to see if the current element (curr) is itself an array.
+curr.flat(Infinity): If curr is an array, this flattens it to a single layer, no matter how deeply nested it is (Infinity specifies unlimited levels of flattening).
+: curr: If curr is not an array (e.g., it's a number or another primitive), we just use it as is.
+
+*/
+
+console.log(flattenedArray); // Output: [1, 2, 3, 4, 5, 6, 7]
+
