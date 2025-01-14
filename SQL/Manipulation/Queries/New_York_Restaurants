@@ -1,0 +1,49 @@
+--We have put together a table of restaurants called nomnom and we need your help to answer some questions. 
+-- This is the current schema for the database: https://shorturl.at/Pkedn
+
+-- step 1: Column names: name, neighborhood, cuisine, review, price, health
+
+
+-- step 2: Selects distinct neighborhoods from table
+--SELECT DISTINCT neighborhood FROM nomnom;
+
+-- step 3: Selects distinct cuisine types from table
+--SELECT DISTINCT cuisine FROM nomnom;
+
+-- step 4: Selects all of the information from the table that results to the cuisine = 'Chinese'
+--SELECT * FROM nomnom WHERE cuisine = 'Chinese';
+
+-- step 5: Returns all restaurants with reviews > 4.
+--SELECT * FROM nomnom WHERE review > 4;
+
+-- step 6: Returns all restaurants that are italian and $$$
+--SELECT * FROM nomnom WHERE cuisine ='Italian' AND price = '$$$';
+
+
+-- step 7: Finds the restaurant that contains the word meatball using LIKE operator.
+--SELECT * FROM nomnom WHERE name LIKE '%meatball%';
+
+-- step 8: finds all of the restaurants that are either in the neighborhood of Midtown, Downtown, or Chinatown.
+--SELECT * FROM nomnom WHERE neighborhood = 'Midtown' OR neighborhood = 'Downtown' OR neighborhood = 'Chinatown';
+
+-- step 9: Finds all of the restaurants and their information that have a NULL health grade currently.
+--SELECT * FROM nomnom WHERE health IS NULL;
+
+-- step 10: This creates a top 10 restaurant ranking based on the reviews, by ordering by the rating in a descending order (highest to lowest), and limiting it to 10 rows.
+
+--SELECT * FROM NOMNOM ORDER BY review DESC LIMIT 10;
+
+-- step 11: This creates a case statement (If-else) to change the rating system depending on certain conditions.
+SELECT name, 
+CASE
+  WHEN review > 4.5 THEN 'Extraordinary'
+  WHEN review > 4 THEN 'Excellent'
+  WHEN review > 3 THEN 'Good'
+  WHEN review > 2 THEN 'Fair'
+  Else 'Poor'
+END AS 'new ratings'
+FROM nomnom;
+
+
+-- SELECT *
+-- FROM nomnom;
