@@ -59,7 +59,7 @@ storyWords.forEach((word) => {
 // Step 2: Using the join method invocation to log the final story to the console
 console.log(storyWords.join(' '));
 
-
+//
 
 //console.log(storyWords);
 
