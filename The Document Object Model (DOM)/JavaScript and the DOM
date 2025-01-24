@@ -1,6 +1,6 @@
 ** manipulated a webpage structure by leveraging the Document Object Model (DOM) interface in JavaScript. **
 //
-
+//
 
 The document keyword grants access to the root of the DOM in JavaScript.
 
