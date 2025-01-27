@@ -21,6 +21,8 @@ If you’re looking for a challenge, create the constructor() and getters for th
 
 */
 
+// the super keyword is going to be extremely useful in this project to avoid repeating code and also improve code readability.
+
 
 class School {
   constructor(name, level, numberOfStudents) {
