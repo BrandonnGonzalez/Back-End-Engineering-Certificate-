@@ -8,6 +8,7 @@ git add adds files from the working directory to the staging area
 git diff shows the difference between the working directory and the staging area
 git commit permanently stores file changes from the staging area in the repository
 git log shows a list of all previous commits
+git
 
 
 https://media-hosting.imagekit.io//3125fa347bbd49ea/83e7cac761b9c916f5e4ec3a27f670a5.png?Expires=1832802869&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=GFskhupBIyUx~6iLbgJ2YmXAQY3Fnu7Fv2R0i0FWmeAKl5njVGfTkKL~1RnQWnsPS83q5rSayc5SWj0JhofjvOA3kXpb9pFObhwycPZkEyYxAcGG9Mt7qSoLbbN-JsA2iwMpYEvG9zvGXG75eBK7N3icr69rUkX2E9p2m~c6TXje-bY~7UkVdmHbW2L8w1LrW3qRNP-9P2teV6wn8qzM0kTZG8c6WCeORstXNnBwy6-OVowMZtFWYFyv8kZfHCsc-wBV4uZMYBVCOpVwiprXvB5aF8OsRgv0kf8f8rWiGrrKyNh4GPpx~5xSxdeHc7cKhupJD3NQtLRt9CubluOPWQ__
