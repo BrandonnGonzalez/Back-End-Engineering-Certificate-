@@ -133,3 +133,4 @@ const macDonalds = new MiddleSchool('Mac Donalds', 1000, 85);
 macDonalds.quickFacts();
 
 
+// end 
