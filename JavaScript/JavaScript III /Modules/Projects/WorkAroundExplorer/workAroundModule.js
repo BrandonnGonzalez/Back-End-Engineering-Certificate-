@@ -39,3 +39,5 @@ function calculateAverage(arrayOfNumbers) {
 }
 
 export { getAverageSalaryByRole, getAverageSalaryByCompany, getSalaryAtCompany, getIndustryAverageSalary };
+
+// end code
