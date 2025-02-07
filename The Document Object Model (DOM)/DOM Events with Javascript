@@ -9,7 +9,7 @@ The mouseup event is fired when the user releases the mouse button. This is diff
 The mouseover event is fired when the mouse enters the content of an element.
 
 The mouseout event is fired when the mouse leaves an element.
-
+...
 
 /*
 
