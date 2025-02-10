@@ -1,4 +1,4 @@
-Nice work! In one line of code, you returned information from a relational database.
+
 
 SELECT * FROM celebs;
 
