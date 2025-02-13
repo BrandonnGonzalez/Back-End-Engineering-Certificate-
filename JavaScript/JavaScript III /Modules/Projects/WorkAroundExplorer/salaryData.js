@@ -37,5 +37,6 @@ const getDataByCompany = company => {
 export default salaryData;
 // Could I also export the functions, collecting them all in an object? 
 //export functionCollection;
+//
 
 export { getRoles, getCompanies, getDataByRole, getDataByCompany };
