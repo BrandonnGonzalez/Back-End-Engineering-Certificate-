@@ -16,3 +16,5 @@ Getters: all properties have a getter
 Methods: .getAverageRating(), .toggleCheckOutStatus(), and .addRating()
 
 */
+
+//
