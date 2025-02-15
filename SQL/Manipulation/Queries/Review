@@ -17,3 +17,4 @@ LIMIT specifies the maximum number of rows that the query will return.
 CASE creates different outputs.
 --
 --
+--
