@@ -3,3 +3,5 @@ FROM payments
 WHERE status = "paid"
 GROUP BY customer
 ORDER BY payment DESC;
+
+--
