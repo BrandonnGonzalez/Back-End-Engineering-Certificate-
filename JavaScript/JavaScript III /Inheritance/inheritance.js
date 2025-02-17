@@ -7,7 +7,7 @@
 - The super keyword calls the constructor() of a parent class.
 - Static methods are called on the class, but not on instances of the class. 
 
-
+-
 */
 
 
