@@ -2,4 +2,31 @@ NOTES
 /*
 
 
+JOIN
+ will combine rows from different tables if the join condition is true.
+
+LEFT JOIN
+ will return every row in the left table, and if the join condition is not met, NULL values are used to fill in the columns from the right table.
+
+Preview: Docs Primary keys are special columns used to uniquely identify each row of a table in SQL.
+Primary key
+ is a column that serves a unique identifier for the rows in the table.
+
+Preview: Docs Primary keys are special columns used to uniquely identify each row of a table in SQL.
+Foreign key
+ is a column that contains the primary key to another table.
+
+Preview: Docs The JOIN clause allows for the return of results from more than one table by joining them together with other results based on common column values specified using an ON clause.
+CROSS JOIN
+ lets us combine all rows of one table with all rows of another table.
+
+Preview: Docs Combines the results of two or more SELECT queries.
+UNION
+ stacks one dataset on top of another.
+
+Preview: Docs Stores the result of a query in a temporary table using an alias.
+WITH
+ allows us to define one or more temporary tables that can be used in the final query.
+
+
 */
