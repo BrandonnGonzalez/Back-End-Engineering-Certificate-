@@ -3,7 +3,7 @@ Dogs mature at a faster rate than human beings. We often say a dog’s age can b
 human’s life equates to 45 years in a dog’s life. 
 How old would you be if you were a dog?
 */
-
+//
 const myAge = 21;
 let earlyYears = 2;
 
